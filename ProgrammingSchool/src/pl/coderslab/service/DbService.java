@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DbService {
 
-    private static String dbName = "products_ex";
+    private static String dbName = "warsztaty2";
     private static String dbUser = "root";
     private static String dbPass = "password";
 

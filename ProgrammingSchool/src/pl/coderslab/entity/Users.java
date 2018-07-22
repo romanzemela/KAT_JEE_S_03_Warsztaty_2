@@ -21,14 +21,6 @@ public class Users {
     }
 
 
-    private Users(int id, String username, String email, String password, UserGroup userGroup) {
-        setId(id);
-        setUsername(username);
-        setEmail(email);
-        this.password = password;
-        setUser_group_id(user_group_id);
-    }
-
     public int getId() {
         return id;
     }
