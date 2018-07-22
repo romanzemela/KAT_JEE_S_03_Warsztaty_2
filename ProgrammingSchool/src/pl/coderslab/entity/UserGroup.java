@@ -1,5 +1,6 @@
 package pl.coderslab.entity;
 
+
 public class UserGroup {
 
     private int id;
@@ -22,4 +23,5 @@ public class UserGroup {
     public void setName(String name) {
         this.name = name;
     }
+
 }

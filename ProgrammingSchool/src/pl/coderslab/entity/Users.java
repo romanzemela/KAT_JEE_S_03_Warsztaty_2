@@ -1,5 +1,7 @@
 package pl.coderslab.entity;
 
+import pl.coderslab.service.BCrypt;
+
 public class Users {
     private int id;
     private String username;
@@ -7,8 +9,24 @@ public class Users {
     private String password;
     private int user_group_id;
 
+    public Users(String username, String email, String password, int user_group_id) {
+        this.username = username;
+        this.email = email;
+        this.setPassword(password);
+        this.setUser_group_id(user_group_id);
+    }
+
     public Users() {
 
+    }
+
+
+    private Users(int id, String username, String email, String password, UserGroup userGroup) {
+        setId(id);
+        setUsername(username);
+        setEmail(email);
+        this.password = password;
+        setUser_group_id(user_group_id);
     }
 
     public int getId() {
@@ -40,7 +58,7 @@ public class Users {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
     public int getUser_group_id() {
